@@ -22,6 +22,10 @@ builder.Services.AddIdentity<Usuario, IdentityRole>()//Adiciona o Identity que s
     .AddEntityFrameworkStores<UsuarioDbContext>()//Adiciona a conexão com o entity que irá salvar os usuarios
     .AddDefaultTokenProviders();//adiciona o provisionamento dos tokens para autenticação.
 
+
+//adiciona o Automapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 //Adding the controllers
 builder.Services.AddControllers();
 
