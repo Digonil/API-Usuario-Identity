@@ -5,13 +5,15 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connString = builder.Configuration.GetConnectionString("UsuarioConnection");
+
 // Add services to the container.
 
 //Adding DbContext (In this case is a IdentityDbContext).
 builder.Services.AddDbContext<UsuarioDbContext>(opts =>
 {
-    opts.UseMySql(builder.Configuration.GetConnectionString("UsuarioConnection"),
-        ServerVersion.AutoDetect("UsuarioConnection"));
+    opts.UseMySql(connString,
+        ServerVersion.AutoDetect(connString));
 }
 );
 
