@@ -1,8 +1,29 @@
+using ApiUsuarios.Data;
+using ApiUsuarios.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//Adding DbContext (In this case is a IdentityDbContext).
+builder.Services.AddDbContext<UsuarioDbContext>(opts =>
+{
+    opts.UseMySql(builder.Configuration.GetConnectionString("UsuarioConnection"),
+        ServerVersion.AutoDetect("UsuarioConnection"));
+}
+);
+
+//Adiciona o Identity que será realizado sobre o usuário e que terá um papel no sistema gerenciado pelo IdentityRole.
+builder.Services.AddIdentity<Usuario, IdentityRole>()//Adiciona o Identity que será realizado sobre o usuário e que terá um papel no sistema gerenciado pelo IdentityRole.
+    .AddEntityFrameworkStores<UsuarioDbContext>()//Adiciona a conexão com o entity que irá salvar os usuarios
+    .AddDefaultTokenProviders();//adiciona o provisionamento dos tokens para autenticação.
+
+//Adding the controllers
 builder.Services.AddControllers();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -20,6 +41,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+//Mappping the controllers
 app.MapControllers();
 
 app.Run();

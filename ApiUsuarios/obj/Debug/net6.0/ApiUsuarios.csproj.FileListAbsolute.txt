@@ -1,0 +1,7 @@
+C:\devCsharp\ApiUsuarios\ApiUsuarios\obj\Debug\net6.0\ApiUsuarios.csproj.AssemblyReference.cache
+C:\devCsharp\ApiUsuarios\ApiUsuarios\obj\Debug\net6.0\ApiUsuarios.GeneratedMSBuildEditorConfig.editorconfig
+C:\devCsharp\ApiUsuarios\ApiUsuarios\obj\Debug\net6.0\ApiUsuarios.AssemblyInfoInputs.cache
+C:\devCsharp\ApiUsuarios\ApiUsuarios\obj\Debug\net6.0\ApiUsuarios.AssemblyInfo.cs
+C:\devCsharp\ApiUsuarios\ApiUsuarios\obj\Debug\net6.0\ApiUsuarios.csproj.CoreCompileInputs.cache
+C:\devCsharp\ApiUsuarios\ApiUsuarios\obj\Debug\net6.0\ApiUsuarios.MvcApplicationPartsAssemblyInfo.cs
+C:\devCsharp\ApiUsuarios\ApiUsuarios\obj\Debug\net6.0\ApiUsuarios.MvcApplicationPartsAssemblyInfo.cache
