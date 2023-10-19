@@ -1,5 +1,6 @@
 using ApiUsuarios.Data;
 using ApiUsuarios.Models;
+using ApiUsuarios.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,9 @@ builder.Services.AddIdentity<Usuario, IdentityRole>()//Adiciona o Identity que s
 
 //adiciona o Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+//Adiciona a dependencia do Service (Scoped, pois utilizara a mesma instância em toda a aplicação).
+builder.Services.AddScoped<CadastroService>();
 
 //Adding the controllers
 builder.Services.AddControllers();
