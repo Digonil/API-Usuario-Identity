@@ -27,8 +27,10 @@ builder.Services.AddIdentity<Usuario, IdentityRole>()//Adiciona o Identity que s
 //adiciona o Automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-//Adiciona a dependencia do Service (Scoped, pois utilizara a mesma instância em toda a aplicação).
-builder.Services.AddScoped<CadastroService>();
+//Adiciona os Services (Scoped, pois utilizara a mesma instância em toda a aplicação), criando suas instâncias.
+builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<TokenService>();
+
 
 //Adding the controllers
 builder.Services.AddControllers();
