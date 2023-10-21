@@ -14,7 +14,8 @@ public class TokenService
         {
             new Claim("username", usuario.UserName),
             new Claim("id", usuario.Id),
-            new Claim(ClaimTypes.DateOfBirth, usuario.BirthDate.ToString())
+            new Claim(ClaimTypes.DateOfBirth, usuario.BirthDate.ToString()),
+            new Claim("loginTimeStamp", DateTime.UtcNow.ToString())
         };
 
         //Gerar o token
@@ -25,7 +26,7 @@ public class TokenService
         var token = new JwtSecurityToken(
             expires: DateTime.Now.AddMinutes(10),
             claims: claims,
-            signingCredentials: signingCredentials);
+            signingCredentials: signingCredentials);//Na criação do token, especifica-se coisas como o tempo de expiraçãao, define que será usados os claims e os signing credencials)
 
         return new JwtSecurityTokenHandler().WriteToken(token);//Pega o token e escreve uma cadeia de caracteres, retornando uma string
     }
