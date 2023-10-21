@@ -8,6 +8,12 @@ namespace ApiUsuarios.Services;
 
 public class TokenService
 {
+    private IConfiguration _configuration;
+
+    public TokenService(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
     public string GenerateToken(Usuario usuario)
     {
         Claim[] claims = new Claim[]
@@ -19,7 +25,7 @@ public class TokenService
         };
 
         //Gerar o token
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("hdaiuhdlkahdjhuojiajijjioj4oi5j6i56joi5"));//Criado a chave aleatória
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SymmetricSecurityKey"]));//Criado a chave aleatória
 
         var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256); //Gera uma credencial com uma chave e codifica com o algoritmo especificado.
 
