@@ -1,4 +1,4 @@
-# **Aplicação de autorização e autencitcação de usuário utilizando o Identity**
+# **Aplicação de autorização e autenticação de usuário utilizando o Identity**
 
 	API que irá realizar o login de um usuário, geração de token e controle de acesso.
 
