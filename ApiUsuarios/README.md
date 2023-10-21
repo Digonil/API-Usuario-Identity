@@ -2,7 +2,7 @@
 
 	API que irá realizar o login de um usuário, geração de token e controle de acesso.
 
-## Utilizado as seguintes teecnologias:
+## Utilizado as seguintes tecnologias:
 
 	- .NET 6;
 	- MySQL 8.0;
